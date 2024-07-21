@@ -25,7 +25,11 @@ export default async function RootLayout({ children, params: { locale } }) {
     // notFound();
   }
   return (
-    <html lang="en" className="bg-white">
+    <html
+      dir={locale === 'ar' ? 'rtl' : 'ltr'}
+      lang={locale}
+      className="bg-white"
+    >
       <body className={marhey.className}>
         <NextIntlClientProvider locale={locale} messages={messages}>
           {children}
